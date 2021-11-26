@@ -8,7 +8,7 @@ namespace UnitTestLab7.Controllers
     public class PlanetasControllerTest
     {
         [TestMethod]
-    public void TestCrearPlanetaViewResultNotNull()
+        public void TestCrearPlanetaViewResultNotNull()
         {
             //Arrange
             PlanetasController planetasController = new PlanetasController();
@@ -93,6 +93,37 @@ namespace UnitTestLab7.Controllers
            ViewResult;
             //Assert
             Assert.AreEqual(numeroPlanetas, vista.ViewBag.planetas.Count);
+        }
+
+        // Ejercicios
+
+
+        [TestMethod]
+        public void TestEditarPlanetaViewResultNotNull()
+        {
+            int id = 1;
+            //Arrange
+            PlanetasController planetasController = new PlanetasController();
+            //Act
+            ActionResult vista = planetasController.editarPlaneta(id);
+            //Assert
+            Assert.IsNotNull(vista);
+        }
+
+        [TestMethod]
+        public void EditarPlanetaElModeloEnviadoEsCorrecto2()
+        {
+            //Arrange
+            int id = 12;
+            PlanetasController planetasController = new PlanetasController();
+            //Act
+            ViewResult vista = planetasController.editarPlaneta(id) as ViewResult;
+            PlanetaModel planeta = vista.Model as PlanetaModel;
+            //Assert
+            Assert.IsNotNull(planeta);
+            Assert.AreEqual(0, planeta.numeroAnillos);
+            Assert.AreEqual("B 612", planeta.nombre);
+            Assert.AreEqual("Rocoso", planeta.tipo);
         }
 
     }
