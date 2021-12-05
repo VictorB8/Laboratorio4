@@ -1,0 +1,157 @@
+﻿@model Laboratorio4.Models.PizzaModel
+@{
+    ViewBag.Title = "Crear Pizza";
+    List<SelectListItem> tiposPizza = new List<SelectListItem>() { new
+    SelectListItem { Text = "Delgada" }, new SelectListItem { Text = "Gruesa" }};
+
+    List<SelectListItem> tamano = new List<SelectListItem>() { new
+    SelectListItem { Text = "Personal" }, new SelectListItem { Text = "Mediana" },
+    new SelectListItem { Text = "Grande" }, new SelectListItem { Text = "Familiar" }};
+}
+<html>
+<head>
+</head>
+<body>
+    @if (ViewBag.Message != null)
+    {
+        if (ViewBag.ExitoAlCrear)
+        {
+            <div class="alert-success">
+                <h3> @ViewBag.Message </h3>
+            </div>
+        }
+        else
+        {
+            <div class="alert-danger">
+                <h3> @ViewBag.Message </h3>
+            </div>
+        }
+    }
+    @using (Html.BeginForm("crearPizza", "Pizza", FormMethod.Post, new
+    {
+        enctype = "multipart/form-data"
+    }))
+    {
+        @Html.AntiForgeryToken()
+        <h1>Crea tu pizza!!!!</h1>
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.tipoPizza)
+                @Html.DropDownListFor(model => model.tipoPizza, tiposPizza, "-Sin selección - ", new { @class = "form - control" })
+
+                @Html.ValidationMessageFor(model => model.tipoPizza, "", new
+                {
+                    @class =
+              "text-danger"
+                })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.tamano)
+                @Html.DropDownListFor(model => model.tamano, tamano, "-Sin selección - ", new { @class = "form - control" })
+
+                @Html.ValidationMessageFor(model => model.tamano, "", new
+                {
+                    @class =
+              "text-danger"
+                })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.queso)
+                @Html.TextBoxFor(model => model.queso, new { @class = "formcontrol" })
+                @Html.ValidationMessageFor(model => model.queso, "", new
+                {
+                    @class
+               = "text-danger"
+                })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.chile)
+                @Html.TextBoxFor(model => model.chile, new
+                {
+                    @class =
+               "form-control"
+                })
+                @Html.ValidationMessageFor(model => model.chile, "", new
+                {
+               @class = "text-danger"
+                })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.chile)
+                @Html.TextBoxFor(model => model.chile, new
+                {
+                    @class =
+               "form-control"
+                })
+                @Html.ValidationMessageFor(model => model.chile, "", new
+                {
+               @class = "text-danger"
+                })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.carne)
+                @Html.TextBoxFor(model => model.carne, new
+                {
+                    @class =
+               "form-control"
+                })
+                @Html.ValidationMessageFor(model => model.carne, "", new
+                {
+               @class = "text-danger"
+                })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.pollo)
+                @Html.TextBoxFor(model => model.pollo, new
+                {
+                    @class =
+               "form-control"
+                })
+                @Html.ValidationMessageFor(model => model.pollo, "", new
+                {
+               @class = "text-danger"
+                })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.hongos)
+                @Html.TextBoxFor(model => model.hongos, new
+                {
+                    @class =
+               "form-control"
+                })
+                @Html.ValidationMessageFor(model => model.hongos, "", new
+                {
+               @class = "text-danger"
+                })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.otros)
+                @Html.TextBoxFor(model => model.otros, new
+                {
+                    @class =
+               "form-control"
+                })
+                @Html.ValidationMessageFor(model => model.otros, "", new
+                {
+               @class = "text-danger"
+                })
+            </div>
+            <div>
+                @Html.ActionLink("Pagar", "Pagar", "Pizza")
+            </div>
+            <div>
+                @Html.ActionLink("Cancelar", "InformacionBasica", "Home")
+            </div>
+        </div>
+    }
+</body>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+</html>

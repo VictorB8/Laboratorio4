@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Menu";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="~/Utils/css/main.css">
+    <style>
+        img {
+            border-radius: 0.5em;
+            border: 2px solid #133b5c;
+            box-shadow: 0px 0px 0px #ccc;
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+        }
+
+        .col {
+            margin-bottom: 1em;
+        }
+
+        .card {
+            margin: 1%;
+            border-radius: 15%;
+            border-color: #133b5c;
+            border-width: .15em;
+            box-shadow: 3px 7px #133b5c;
+        }
+
+        .center-h {
+            justify-content: center;
+        }
+
+        .center-v {
+            align-items: center;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <br />
+    <h1 style="text-align:center">Disfruta de nuestros productos y combos</h1>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 text-center center-h center-v">
+            <div class="card">
+                <div class="col">
+                    <img src="~/Utils/images/Combo1Rollitos.jpg">
+                </div>
+                <div class="col">
+                    <h2>Pizza pequeña mas rollitos de canela</h2>
+                    <p></p>
+                    <br />
+                    <h4>Descripcion</h4>
+                    <p>Disfruta de este delicioso combo por solo 6500</p>
+                    <div>
+                        @Html.ActionLink("Comprar", "Pagar", "Pizza")
+                    </div>
+                    <br />
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="col">
+                    <img src="~/Utils/images/PizzaPersonalisada.png">
+                </div>
+                <div class="col">
+                    <h2>Arma tu propia Pizza!!!!!!</h2>
+                    <p></p>
+                    <br />
+
+                    <h4>Descripcion</h4>
+                    <p>No encuestras algo que te guste?, pues arma tu propia pizza por solo 12500(el precio no varia!!1)</p>
+                    
+                    <div>
+                        @Html.ActionLink("Comprar", "crearPizza", "Pizza")
+                    </div>
+                    <br />
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="col">
+                    <img src="~/Utils/images/ComboMarioBros.jpg">
+                </div>
+                <div class="col">
+                    <h2>Combo Mario Bros</h2>
+                    <p></p>
+                    <br />
+
+                    <h4>Descripcion</h4>
+                    <p>Disfruta como los hermanos bros con dos pisas grandes por solo 10000!!</p>
+                    <div>
+                        @Html.ActionLink("Comprar", "Pagar", "Pizza")
+                    </div><br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div style="margin-top:100px"></div>
+</body>
+</html>

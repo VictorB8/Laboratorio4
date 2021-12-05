@@ -121,11 +121,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PizzaController.cs" />
     <Compile Include="Controllers\PlanetasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\PizzaHandler.cs" />
     <Compile Include="Handlers\PlanetasHandler.cs" />
+    <Compile Include="Models\Pagar.cs" />
+    <Compile Include="Models\PizzaModel.cs" />
     <Compile Include="Models\PlanetaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -151,6 +155,13 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Styles\InformacionBasica.css" />
+    <Content Include="Utils\css\main.css" />
+    <Content Include="Utils\css\rows.css" />
+    <Content Include="Utils\images\Combo1Rollitos.jpg" />
+    <Content Include="Utils\images\ComboMarioBros.jpg" />
+    <Content Include="Utils\images\familia mario.jpg" />
+    <Content Include="Utils\images\PizzaPersonalisada.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -170,9 +181,16 @@
     <Content Include="Views\Planetas\listadoDePlanetas.cshtml" />
     <Content Include="Views\Planetas\crearPlaneta.cshtml" />
     <Content Include="Views\Planetas\editarPlaneta.cshtml" />
+    <Content Include="Views\Home\InformacionBasica.cshtml" />
+    <Content Include="Views\Home\SobreNosotros.cshtml" />
+    <Content Include="Views\Pizza\listadoDePizzas.cshtml" />
+    <Content Include="Views\Pizza\crearPizza.cshtml" />
+    <Content Include="Views\Pizza\menu.cshtml" />
+    <Content Include="Views\Pizza\Pagar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ExamenPizza\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

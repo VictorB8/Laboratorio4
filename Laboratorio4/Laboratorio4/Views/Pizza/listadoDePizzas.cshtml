@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Planetas"; }
+<h1>Listado de planetas</h1>
+
+@foreach (var pizza in ViewBag.pizaa)
+{
+    <hr />
+    <h4> <strong> Ficha del planeta: </strong> @pizza.id </h4>
+    <p>
+        Tamaño: @pizza.tamano <br />
+        Tipo: @pizza.tipo <br />
+        Queso: @pizza.queso <br />
+    </p>
+    )
+    <hr />
+}

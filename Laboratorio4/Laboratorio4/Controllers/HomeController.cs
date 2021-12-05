@@ -26,5 +26,18 @@ namespace Laboratorio4.Controllers
             ViewBag.ValorParaTest = 1;
             return View("Contact");
         }
+
+        public ActionResult InformacionBasica()
+        {
+            ViewBag.Message = "La informacion basica del planetario.";
+            return View();
+        }
+
+        public ActionResult SobreNosotros()
+        {
+            ViewBag.Message = "Informacion sobre horarios, parqueo  transporte";
+
+            return View();
+        }
     }
 }

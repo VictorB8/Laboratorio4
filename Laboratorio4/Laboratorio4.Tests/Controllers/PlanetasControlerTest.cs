@@ -8,6 +8,39 @@ namespace UnitTestLab7.Controllers
     public class PlanetasControllerTest
     {
         [TestMethod]
+        public void menuViewResultNotNull()
+        {
+            //Arrange
+            PizzaController pizzaController = new PizzaController();
+            //Act
+            ActionResult vista = pizzaController.menu();
+            //Assert
+            Assert.IsNotNull(vista);
+        }
+
+        [TestMethod]
+        public void sobreNosotrosViewResultNotNull()
+        {
+            //Arrange
+            HomeController homeController = new HomeController();
+            //Act
+            ActionResult vista = homeController.SobreNosotros();
+            //Assert
+            Assert.IsNotNull(vista);
+        }
+
+        [TestMethod]
+        public void pagarViewResultNotNull()
+        {
+            //Arrange
+            PizzaController pizzaController = new PizzaController();
+            //Act
+            ActionResult vista = pizzaController.Pagar();
+            //Assert
+            Assert.IsNotNull(vista);
+        }
+
+        [TestMethod]
         public void TestCrearPlanetaViewResultNotNull()
         {
             //Arrange

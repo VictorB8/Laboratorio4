@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.title = "Información Basica Pizza Marios";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.title</title>
+    <meta charset="utf-8" />
+    @Styles.Render("~/Utils/css")
+</head>
+<body>
+
+    <style>
+        .carousel-item {
+            height: 40em;
+        }
+
+        p.grande {
+            font-size: large;
+        }
+    </style>
+    <span class="titulo">
+        <p style="text-align:center" class="grande">Pizzas Marios</p>
+    </span>
+
+    <div>
+        <center>
+            <img src="~/Utils/images/familia mario.jpg" class="center">
+        </center>
+        
+    </div>
+
+    <div class="row d-flex flex-wrap align-items-center">
+
+        <div class="col-md-6">
+            <span class="titulo">Menu</span>
+            <p align="justify" class="parrafo">
+                Disfruta de nuestro delicioso menu y de nuestras ofertas especiales!!!
+                <br /><br />
+            </p>
+            <div>
+                @Html.ActionLink("Menu", "menu", "Pizza")
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <span class="titulo">Sobre nosotros</span>
+            <p align="justify" class="parrafo">
+                Ve nuestros horarios, ubicacion y otra informacion que te puede ser util!
+            </p>
+            <div>
+                @Html.ActionLink("SobreNosotros", "SobreNosotros", "Home")
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:100px"></div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿@model Laboratorio4.Models.Pagar
+@{
+   
+}
+<html>
+<head>
+</head>
+<body>
+  
+    @using (Html.BeginForm("Pagar", "Pizza", FormMethod.Post, new
+    {
+        enctype = "multipart/form-data"
+    }))
+    {
+        @Html.AntiForgeryToken()
+        <h1></h1>
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.nombreDelDueño)
+                @Html.TextBoxFor(model => model.nombreDelDueño, new { @class = "formcontrol" })
+                @Html.ValidationMessageFor(model => model.nombreDelDueño, "", new
+                {
+                    @class
+               = "text-danger"
+                })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Numero)
+                @Html.TextBoxFor(model => model.Numero, new { @class = "formcontrol" })
+                @Html.ValidationMessageFor(model => model.Numero, "- 4567 1234 3213 3231 -", new
+                {
+                    @class
+               = "text-danger"
+                })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.CCV)
+                @Html.TextBoxFor(model => model.CCV, new { @class = "formcontrol" })
+                @Html.ValidationMessageFor(model => model.CCV, "- 123 -", new
+                {
+                    @class
+               = "text-danger"
+                })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fechaVencimiento)
+                @Html.TextBoxFor(model => model.fechaVencimiento, new { @class = "formcontrol" })
+                @Html.ValidationMessageFor(model => model.fechaVencimiento, "- 12/2/2023 -", new
+                {
+                    @class
+               = "text-danger"
+                })
+            </div>
+            <div>
+                @Html.ActionLink("Pagar", "menu", "Pizza")
+            </div>
+            <div>
+                @Html.ActionLink("Cancelar", "InformacionBasica", "Home")
+            </div>
+        </div>
+    }
+</body>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+</html>
