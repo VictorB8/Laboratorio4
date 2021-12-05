@@ -19,14 +19,13 @@ namespace UnitTestLab7.Controllers
         }
 
         [TestMethod]
-        public void sobreNosotrosViewResultNotNull()
+        public void sobreNosotrosViewResult()
         {
-            //Arrange
-            HomeController homeController = new HomeController();
+            HomeController HomeController = new HomeController();
             //Act
-            ActionResult vista = homeController.SobreNosotros();
+            ViewResult vista = HomeController.SobreNosotros() as ViewResult;
             //Assert
-            Assert.IsNotNull(vista);
+            Assert.AreEqual("SobreNosotros", vista.ViewName);
         }
 
         [TestMethod]
@@ -38,6 +37,7 @@ namespace UnitTestLab7.Controllers
             ActionResult vista = pizzaController.Pagar();
             //Assert
             Assert.IsNotNull(vista);
+
         }
 
         [TestMethod]

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Laboratorio4.Handlers;
+using Laboratorio4.Models;
+
 
 namespace Laboratorio4.Controllers
 {
@@ -35,9 +38,9 @@ namespace Laboratorio4.Controllers
 
         public ActionResult SobreNosotros()
         {
-            ViewBag.Message = "Informacion sobre horarios, parqueo  transporte";
+            
 
-            return View();
+            return View("SobreNosotros");
         }
     }
 }
